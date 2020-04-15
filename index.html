@@ -31,9 +31,16 @@
       background-repeat: no-repeat;
       background-attachment: fixed;
       background: linear-gradient(90deg, #ff00e5, #ffe600);
-      background-size: 100% 100%;
+      background-size: 400% 400%;
 
+      -webkit-animation: 10s ease infinite;
       animation: 10s ease infinite;
+    }
+
+    @-webkit-keyframes {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
     }
 
     @keyframes {
