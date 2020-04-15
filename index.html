@@ -30,38 +30,36 @@
       margin: 0;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      background: linear-gradient(90deg, #ff00e5, #ffe600);
-      background-size: 400% 400%;
+      background: linear-gradient(221deg, #e44eff, #ffee00, #00d2ff, #cd4de4, #e4a74d, #fc2929);
+      background-size: 1200% 1200%;
 
       text-align: center;
 
-      -webkit-animation: 10s ease infinite;
-      -moz-animation: 10s ease infinite;
-      -o-animation: 10s ease infinite;
-      animation: 10s ease infinite;
+      -webkit-animation: BackgroundAnimation 30s ease infinite;
+      -moz-animation: BackgroundAnimation 30s ease infinite;
+      -o-animation: BackgroundAnimation 30s ease infinite;
+      animation: BackgroundAnimation 30s ease infinite;
     }
 
+    @-webkit-keyframes BackgroundAnimation {
+       0%{background-position:9% 0%}
+       50%{background-position:92% 100%}
+       100%{background-position:9% 0%}
     }
-
-    @-webkit-keyframes {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
+    @-moz-keyframes BackgroundAnimation {
+       0%{background-position:9% 0%}
+       50%{background-position:92% 100%}
+       100%{background-position:9% 0%}
     }
-    @-moz-keyframes {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
+    @-o-keyframes BackgroundAnimation {
+       0%{background-position:9% 0%}
+       50%{background-position:92% 100%}
+       100%{background-position:9% 0%}
     }
-    @-o-keyframes {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
-    }
-    @keyframes {
-        0%{background-position:0% 50%}
-        50%{background-position:100% 50%}
-        100%{background-position:0% 50%}
+    @keyframes BackgroundAnimation {
+       0%{background-position:9% 0%}
+       50%{background-position:92% 100%}
+       100%{background-position:9% 0%}
     }
   </style>
 
