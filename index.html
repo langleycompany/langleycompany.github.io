@@ -61,21 +61,34 @@
        50%{background-position:92% 100%}
        100%{background-position:9% 0%}
     }
-  </style>
 
-  <script>
-    $(document).ready(function(){
-      $('button').click(function(){
-          $('.alert').show()
-      })
-    });
-  </script>
+    .p-4 {
+      width: 50%;
+      margin: 0auto;
+      margin-bottom: 0px;
+      margin-top: 20px;
+      border-radius: 20px;
+      background-color: white;
+      text-align: center;
+      display: inline-block;
+    }
+
+  </style>
 
 </head>
 
 <div class="gradient">
+
   <body>
-    <button type="button" class="btn btn-primary" onclick="">Click me!</button>
+
+    <div class="shadow p-4 mb-4">
+      <span class="rounded-lg">
+        <h1>Langley</h1>
+      </span>
+    </div>
+
   </body>
+
 </div>
+
 </html>
