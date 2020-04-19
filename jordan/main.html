@@ -19,37 +19,70 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
   <style>
+
+    .top {
+      float: right;
+      padding-top: 5rem;
+      padding-right: 5rem;
+    }
+
+    .responsive {
+      width: 90%;
+      height: auto;
+      float: center;
+    }
     html {
       height: 100%;
     }
 
     body {
       height: 100%;
-      margin: 0;
-
-      text-align: center;
-
       background-color: #e0e0e0;
     }
 
-    .logo_text {
+    .name1 {
       font-size: 2.75rem;
       font-family: 'Inter', sans-serif;
       text-align: right;
-      padding-right: 5rem;
-      padding-top: 5rem;
     }
 
-    .text_below {
+    .nav-link {
       font-size: 1rem;
       font-family: 'Inter', sans-serif;
-      text-align: center;
+      color: #000000;
+      text-align: right;
+    }
+
+    a:hover {
+      font-size: 1rem;
+      color: #fefefe;
+    }
+
+    .prologue1 {
+      text-align: left;
     }
 
   </style>
 
 </head>
 
-<body>
+<div class="top">
+  <div class="nameandlinks">
+    <div class="name1">
+      <h1>Jordan Reger</h1>
+      <h5>Hitchhiker's Guide to Earth</h5>
+    </div>
+
+    <br>
+
+    <a class="nav-link" href="contents">Table of Contents</a>
+  </div>
+</div>
+
+<br>
+
+<div class="responsive_img">
+  <img src="images/open_map_flatline.svg" alt="open map" class="responsive">
+</div>
 
 </html>
