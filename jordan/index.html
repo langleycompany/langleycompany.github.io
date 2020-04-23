@@ -45,6 +45,7 @@
       font-size: 2.75rem;
       font-family: 'Inter', sans-serif;
       text-align: right;
+      color: #000000;
     }
 
     .nav-link {
@@ -54,9 +55,13 @@
       text-align: right;
     }
 
+    a {
+      color: #000000;
+    }
+
     a:hover {
       font-size: 1rem;
-      color: #fefefe;
+      color: #ff1e56;
     }
 
     .body {
@@ -67,11 +72,21 @@
 
   </style>
 
+  <style>
+  .prologue {
+    color: #ffffff;
+  }
+
+  </style>
+
 </head>
 
 <div class="top">
   <div class="nameandlinks">
     <div class="name1">
+      <svg width="250" height="10">
+        <rect width="300" height="100" style="fill: #ffac41;" />
+      </svg>
       <h1>Jordan Reger</h1>
       <h5>Hitchhiker's Guide to Earth</h5>
     </div>
@@ -89,8 +104,19 @@
 </div>
 
 <div class="body">
-  <h3>Some tips</h3>
+  <a href="#" data-toggle="popover" data-placement="bottom" data-content="If you see a dash ("-"), there will be a citation that pops up if you click it.">- Click me!</a>
+
+  <script>
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+    });
+  </script>
   <p>If you see a dash ("-"), there will be a citation that pops up if you click it.</p>
 </div>
+
+<br>
+
+<div class="prologue">
+  <h2>Prologue</h2>
 
 </html>
