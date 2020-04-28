@@ -1,45 +1,44 @@
-var mousePressed = false;
-var lastX, lastY;
-var ctx;
+var canvas = document.getElementById('paint');
+var ctx = canvas.getContext('2d');
 
-function InitThis() {
-    ctx = document.getElementById('myCanvas').getContext("2d");
+var sketch = document.getElementById('sketch');
+var sketch_style = getComputedStyle(sketch);
+canvas.width = 500;
+canvas.height = 250;
 
-    $('#myCanvas').mousedown(function (e) {
-        mousePressed = true;
-        Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
-    });
+var mouse = {x: 0, y: 0};
 
-    $('#myCanvas').mousemove(function (e) {
-        if (mousePressed) {
-            Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true);
-        }
-    });
+/* Mouse Capturing Work */
+canvas.addEventListener('mousemove', function(e) {
+mouse.x = e.pageX - this.offsetLeft;
+mouse.y = e.pageY - this.offsetTop;
+}, false);
 
-    $('#myCanvas').mouseup(function (e) {
-        mousePressed = false;
-    });
-	    $('#myCanvas').mouseleave(function (e) {
-        mousePressed = false;
-    });
-}
+/* Drawing on Paint App */
+ctx.lineJoin = 'round';
+ctx.lineCap = 'round';
 
-function Draw(x, y, isDown) {
-    if (isDown) {
-        ctx.beginPath();
-        ctx.strokeStyle = $('#selColor').val();
-        ctx.lineWidth = $('#selWidth').val();
-        ctx.lineJoin = "round";
-        ctx.moveTo(lastX, lastY);
-        ctx.lineTo(x, y);
-        ctx.closePath();
-        ctx.stroke();
-    }
-    lastX = x; lastY = y;
-}
+ctx.strokeStyle = "red";
+function getColor(colour){ctx.strokeStyle = colour;}
 
-function clearArea() {
-    // Use the identity matrix while clearing the canvas
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-}
+function getSize(size){ctx.lineWidth = size;}
+
+
+//ctx.strokeStyle =
+//ctx.strokeStyle = document.settings.colour[1].value;
+
+canvas.addEventListener('mousedown', function(e) {
+  ctx.beginPath();
+  ctx.moveTo(mouse.x, mouse.y);
+
+  canvas.addEventListener('mousemove', onPaint, false);
+}, false);
+
+canvas.addEventListener('mouseup', function() {
+  canvas.removeEventListener('mousemove', onPaint, false);
+}, false);
+
+var onPaint = function() {
+  ctx.lineTo(mouse.x, mouse.y);
+  ctx.stroke();
+};
