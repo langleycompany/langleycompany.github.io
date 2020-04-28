@@ -19,7 +19,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
     <!-- sketchpad script -->
-    <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
+
     <script type="text/javascript">
             window.onload = function() {
                     var myCanvas = document.getElementById("myCanvas");
@@ -100,10 +100,6 @@
         text-decoration: none;
       }
 
-      .2whatsinaname {
-        background-color: f0a500;
-      }
-
       canvas {
         border: 3px solid black;
       }
@@ -123,7 +119,7 @@
 
   <div class="imagemain1">
     <h1>My autobiography</h1>
-    <img class="img-fluid" src="images/mind_map_flatline.svg" alt="mind_map">
+    <img class="img-fluid" src="images/mind_map_flatline.svg" alt="mind_map" width="50%">
   </div>
 
   <div class="content">
@@ -165,7 +161,7 @@
     <br>
 
     <!-- What's in a name -->
-    <div class="2whatsinaname">
+    <div class="2whatsinaname" id="2whatsinaname">
       <h2>2. What's in a Name?</h2>
 
       <br>
@@ -180,9 +176,9 @@
     <br>
     <br>
 
-    <div class="7coloryourworld">
+    <div class="7coloryourworld" id="7coloryourworld">
       <h2>7. Color Your World!</h2>
-      <p>No seriously, you can color below!</p>
+      <p>No seriously, you can color below! <a href="#7coloryourworld" data-toggle="popover" data-placement="bottom" data-content="Only works on desktop, sorry!">Note</a></p>
       <div id="board">
         <canvas id="myCanvas" width="auto" height="auto">
                 Sorry, your browser doesn't support canvas technology.
@@ -198,6 +194,28 @@
         </p>
       </div>
     </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="8roomsweetroom" id="8roomsweetroom">
+      <h2>8. Room Sweet Room</h2>
+      <p>I (usually) don't spend much time in my room, but <a href="#8roomsweetroom" data-toggle="popover" data-placement="bottom" data-content="If you're from the future, I'm talking about the Pandemic of 2020.">because of the quarantine</a>,
+        I've been spending a lot of time in my room. A year ago, I took out everything that didn't bring productivity or happiness to me. Now, it seems pretty boring (according to the people I live with). It has a small Ikea desk with a nice little
+        plant on it, and this is where I code all the time. I have a small nightstand with a drawer on the bottom, and that's where I have my record player (on top) and the records (in the drawer). Next to it, I have my bed, which takes up most of
+        the space in my room. That's it...</p>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="14map" id="14map">
+      <h2>16. Synectics</h2>
+      <p>1. A pen is wiser, it must know what it is doing before it does it because it cannot be erased.</p>
+      <p>3. A clock is smarter, because it has more parts in it to
+
 
   </div>
 </html>
