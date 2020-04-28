@@ -18,6 +18,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
+    <!-- sketchpad script -->
+    <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
+    <script type="text/javascript">
+            window.onload = function() {
+                    var myCanvas = document.getElementById("myCanvas");
+                    var curColor = $('#selectColor option:selected').val();
+                    if(myCanvas){
+                                    var isDown      = false;
+                                    var ctx = myCanvas.getContext("2d");
+                                    var canvasX, canvasY;
+                                    ctx.lineWidth = 5;
+
+                                    $(myCanvas)
+                                    .mousedown(function(e){
+                                                    isDown = true;
+                                                    ctx.beginPath();
+                                                    canvasX = e.pageX - myCanvas.offsetLeft;
+                                                    canvasY = e.pageY - myCanvas.offsetTop;
+                                                    ctx.moveTo(canvasX, canvasY);
+                                    })
+                                    .mousemove(function(e){
+                                                    if(isDown != false) {
+                                                            canvasX = e.pageX - myCanvas.offsetLeft;
+                                                            canvasY = e.pageY - myCanvas.offsetTop;
+                                                            ctx.lineTo(canvasX, canvasY);
+                                                            ctx.strokeStyle = curColor;
+                                                            ctx.stroke();
+                                                    }
+                                    })
+                                    .mouseup(function(e){
+                                                    isDown = false;
+                                                    ctx.closePath();
+                                    });
+                    }
+
+                    $('#selectColor').change(function () {
+                                    curColor = $('#selectColor option:selected').val();
+                    });
+
+            };
+    </script>
+
+
+
     <style>
 
       html {
@@ -61,8 +105,7 @@
       }
 
       canvas {
-        width: 100%;
-        height: auto;
+        border: 3px solid black;
       }
 
       *{font-family:sans-serif;}
@@ -140,24 +183,19 @@
     <div class="7coloryourworld">
       <h2>7. Color Your World!</h2>
       <p>No seriously, you can color below!</p>
-      <script src="draw.js"></script>
-      <div id="sketch">
-        <canvas id="paint"></canvas>
-      </div>
-
-      <div id="settings"> Colours
-        <button onclick="getColor('blue');">Blue</button>
-        <button onclick="getColor('red');">Red</button>
-        <button onclick="getColor('green');">Green</button>
-        <button onclick="getColor('white');">White</button>
-        <button onclick="getColor('#333333');">Eraser</button>
-      </div>
-
-      <div id="settings"> Brush Size
-        <button onclick="getSize('2');">Small</button>
-        <button onclick="getSize('5');">Med</button>
-        <button onclick="getSize('10');">Large</button>
-        <button onclick="getSize('20');">X Large</button>
+      <div id="board">
+        <canvas id="myCanvas" width="auto" height="auto">
+                Sorry, your browser doesn't support canvas technology.
+        </canvas>
+        <p>Color picker: <select id="selectColor">
+                          <option id="colBlack" value="black" selected="selected">Black</option>
+                          <option id="colRed" value="red">Red</option>
+                          <option id="colBlue" value="blue">Blue</option>
+                          <option id="colGreen" value="green">Green</option>
+                          <option id="colOrange" value="orange">Orange</option>
+                          <option id="colYellow" value="yellow">Yellow</option>
+        </select>
+        </p>
       </div>
     </div>
 
