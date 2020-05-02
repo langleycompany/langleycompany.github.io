@@ -13,20 +13,26 @@
     <img onclick="playpause()" src="icons/play_arrow-24px.svg"></img>
   </div>
 -->
+  <div id="landscapefullscreendiv">
+    <video id="landscapevideo" controls autoplay>
+      <source src="videos/2kpistollandscape.mp4" type="video/mp4">
+    </video>
+  </div>
 
-  <video id="videolandscape" controls autoplay>
-    <source src="videos/2kpistollandscape.mp4" type="video/mp4">
-  </video>
-
-  <video id="videovertical" controls autoplay>
-    <source src="videos/2kpistolvertical.mp4" type="video/mp4">
-  </video>
+  <div id="verticalfullscreendiv">
+    <video id="videovertical" controls autoplay>
+      <source src="videos/2kpistolvertical.mp4" type="video/mp4">
+    </video>
+  </div>
 
   <script>
     dynamicdisplay();
     function dynamicdisplay() {
-      landscape = document.getElementById("videolandscape");
-      vertical = document.getElementById("videovertical");
+      landscape = document.getElementById("landscapefullscreendiv");
+      vertical = document.getElementById("verticalfullscreendiv");
+
+      verticaltime = vertical.currentTime;
+      landscapetime = landscape.currentTime;
 
       if(window.innerHeight > window.innerWidth) {
         vertical.style.display = "block";
@@ -43,8 +49,12 @@
       }
 
       setTimeout(dynamicdisplay, 1);
-      console.log(vertical.currentTime);
     }
+
+    video = document.getgetElementById("landscapevideo");
+    console.log(video.videoWidth);
+
+
   </script>
 
 </div>
