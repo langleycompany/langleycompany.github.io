@@ -1,0 +1,20 @@
+<script>
+
+var landscape = document.getElementById("video_landscape");
+var vertical = document.getElementById("video_vertical");
+
+if(window.innerHeight > window.innerWidth) {
+  video_vertical.style.display = "block";
+}
+else {
+  video_vertical.style.display = "none";
+}
+
+if(window.innerWidth > window.innerHeight) {
+  video_landscape.style.display = "block";
+}
+else {
+  video_landscape.style.display = "none";
+}
+
+</script>
