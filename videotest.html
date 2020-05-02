@@ -14,11 +14,11 @@
   </div>
 -->
 
-  <video id="videolandscape" controls>
+  <video id="videolandscape" controls autoplay>
     <source src="videos/2kpistollandscape.mp4" type="video/mp4">
   </video>
 
-  <video id="videovertical" controls>
+  <video id="videovertical" controls autoplay>
     <source src="videos/2kpistolvertical.mp4" type="video/mp4">
   </video>
 
@@ -43,6 +43,7 @@
       }
 
       setTimeout(dynamicdisplay, 1);
+      console.log(vertical.currentTime);
     }
   </script>
 
