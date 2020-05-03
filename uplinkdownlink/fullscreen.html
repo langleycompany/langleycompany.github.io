@@ -7,6 +7,10 @@
     height: 100%;
   }
 
+  .landscapefullscreendiv {
+    object-fit: cover;
+  }
+
 </style>
 
 <div class="container" id="container">
@@ -15,46 +19,27 @@
     <img onclick="playpause()" src="icons/play_arrow-24px.svg"></img>
   </div>
 -->
-  <div id="landscapefullscreendiv">
-    <video id="landscapevideo" controls autoplay>
+  <div id="videocontainer">
+    <video id="video" controls>
       <source src="videos/2kpistollandscape.mp4" type="video/mp4">
     </video>
   </div>
 
-  <div id="verticalfullscreendiv">
-    <video id="videovertical" controls autoplay>
-      <source src="videos/2kpistolvertical.mp4" type="video/mp4">
-    </video>
-  </div>
 
   <script>
     dynamicdisplay();
     function dynamicdisplay() {
-      landscape = document.getElementById("landscapefullscreendiv");
-      vertical = document.getElementById("verticalfullscreendiv");
-
-      verticaltime = vertical.currentTime;
-      landscapetime = landscape.currentTime;
+      video = document.getElementById("video");
 
       if(window.innerHeight > window.innerWidth) {
-        vertical.style.display = "block";
+        video.style.objectFit = "cover";
       }
       else {
-        vertical.style.display = "none";
-      }
-
-      if(window.innerWidth > window.innerHeight) {
-        landscape.style.display = "block";
-      }
-      else {
-        landscape.style.display = "none";
+        video.style.objectFit = "none";
       }
 
       setTimeout(dynamicdisplay, 1);
     }
-
-    video = document.getElementById("landscapevideo");
-    console.log(video.videoWidth);
 
   </script>
 
