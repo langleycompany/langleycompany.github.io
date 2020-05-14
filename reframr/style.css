@@ -1,3 +1,4 @@
+/*
 html {
 	font-family: 'Open Sans', sans-serif;
 }
@@ -10,9 +11,6 @@ a {
 a:hover {
 	color: #404040;
 }
-
-
-/* top of page */
 
 .top-bar-1 {
 	padding: 2rem;
@@ -43,9 +41,6 @@ a:hover {
 	height: 75%;
 }
 
-
-/* center page */
-
 .center-page-content {
 	padding: 2rem;
 
@@ -65,3 +60,4 @@ a:hover {
 	width: 90%;
 	height: 10vw;
 }
+*/
