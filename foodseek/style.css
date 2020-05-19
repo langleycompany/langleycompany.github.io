@@ -3,7 +3,7 @@ html {
 	height: 100%;
 }
 
-#navbar {
+#logobar {
 	height: 10%;
 }
 
@@ -25,10 +25,51 @@ html {
 	height: auto;
 }
 
-#food-near-you-1 {
+#middle-page-content {
+	font-size: 2.5rem;
 	font-family: 'DM Sans', sans-serif;
+	text-align: center;
 }
 
-#map {
-	border-radius: 20px;
+.three {
+	width: 100%;
+	float: left;
+}
+
+#navbar {
+	position:fixed;
+	padding: 2rem;
+  bottom: 0;
+  width:100%;
+  height:1vw;
+	background: linear-gradient(45deg, #fc0000, #ffde59);
+	background-size: 1000% 1000%;
+
+	-webkit-animation: background-gradient 10s ease infinite;
+	-moz-animation: background-gradient 10s ease infinite;
+	animation: background-gradient 10s ease infinite;
+}
+
+@-webkit-keyframes background-gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@-moz-keyframes background-gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@keyframes background-gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+#navbar span {
+	text-align: center;
+	display: inline-block;
+  vertical-align: middle;
 }
