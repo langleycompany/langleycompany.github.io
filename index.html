@@ -24,6 +24,7 @@
 
 				<script>
 					darkmode = false;
+					darkmode = sessionStorage.getItem('theme');
 					light = document.getElementById('togglelight');
 					night = document.getElementById('togglenight');
 
@@ -31,8 +32,10 @@
 						var element = document.body;
 						element.classList.toggle("dark-mode");
 						darkmode = !darkmode;
+						sessionStorage.setItem('theme', darkmode);
+					}
 
-
+					function checkTheme(){
 						if (darkmode === false) {
 							light.style.display = "none";
 							night.style.display = "block";
@@ -42,6 +45,7 @@
 							light.style.display = "block";
 							night.style.display = "none";
 						}
+						setTimeout(checkTheme, 1);
 					}
 				</script>
 			</div>
