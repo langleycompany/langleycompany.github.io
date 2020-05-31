@@ -1,0 +1,37 @@
+body {
+	background-color: #e0e0e0;
+	color: #000000;
+}
+
+.dark-mode {
+	background-color: #222222;
+	color: #e0e0e0;
+}
+
+@media only screen and (max-width: 600px) {
+	#title {
+		font-family: 'DM Sans', sans-serif;
+		font-size: 3rem;
+		padding-left: 1rem;
+	}
+
+	.darkmodetoggle {
+		font-size: 2rem;
+		text-align: right;
+		padding-right: 1rem;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	#title {
+		font-family: 'DM Sans', sans-serif;
+		font-size: 5rem;
+		padding-left: 2rem;
+	}
+
+	.darkmodetoggle {
+		font-size: 2rem;
+		text-align: right;
+		padding-right: 2rem;
+	}
+}

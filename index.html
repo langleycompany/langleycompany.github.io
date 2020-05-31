@@ -1,68 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+	<head>
+		<title>Langley</title>
 
-  <title>Langley</title>
-  <link rel="shortcut icon" type="image/x-icon" href="images/langley.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="Description" content="Langley Company: A software building service for the future.">
+		<link href="https://cdn.jsdelivr.net/gh/jetavators/airframe@master/airframe.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
-  <!-- font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
+	</head>
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<body>
+		<div class="two">
+			<div class="two-one">
+				<span id="title">Langley</span>
+			</div>
+			<div class="two-two">
+				<div class="darkmodetoggle">
+					<span id="togglelight" onclick="toggleDarkMode()" style="display: none">☀️</span>
+					<span id="togglenight" onclick="toggleDarkMode()">🌑</span>
+				</div>
 
-  <style>
-    html {
-      height: 100%;
-    }
+				<script>
+					darkmode = false;
+					light = document.getElementById('togglelight');
+					night = document.getElementById('togglenight');
 
-    body {
-      height: 100%;
-      margin: 0;
+					function toggleDarkMode(){
+						var element = document.body;
+						element.classList.toggle("dark-mode");
+						darkmode = !darkmode;
 
-      text-align: center;
 
-      background-color: #e0e0e0;
-    }
+						if (darkmode === false) {
+							light.style.display = "none";
+							night.style.display = "block";
+						}
 
-    .logo_text {
-      font-size: 2.75rem;
-      font-family: 'Inter', sans-serif;
-      text-align: right;
-      padding-right: 5rem;
-      padding-top: 5rem;
-
-      color: #000000;
-      mix-blend-mode: difference;
-    }
-
-    .text_below {
-      font-size: 1rem;
-      font-family: 'Inter', sans-serif;
-      text-align: center;
-    }
-
-  </style>
-
-</head>
-
-<body>
-
-  <div class="logo_text">
-    <h1>Langley</h1>
-  </div>
-
-  <div class="videotest">
-    <a href="videotest">Video test<a>
-  <div>
-
-</body>
-
+						else if (darkmode === true) {
+							light.style.display = "block";
+							night.style.display = "none";
+						}
+					}
+				</script>
+			</div>
+		</div>
+	</body>
 </html>
