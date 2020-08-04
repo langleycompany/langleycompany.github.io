@@ -1,0 +1,70 @@
+<link rel="shortcut icon" type="image/x-icon" href="icons/reframr.ico">
+<title>reframr</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<style>
+  html {
+    background-color: #000000;
+  }
+  video {
+		position: relative;
+		z-index: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+	.title {
+		text-shadow: 0.2rem 0.2rem 0.2rem #000000;
+		padding-left: 1.5rem;
+		position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+		color: #000000;
+		color: #ffffff;
+		font-family: 'Open Sans', sans-serif;
+	}
+
+</style>
+<div class="container" id="container">
+<!--
+  <div class="controls">
+    <img onclick="playpause()" src="icons/play_arrow-24px.svg"></img>
+  </div>
+-->
+  <div id="videocontainer">
+    <video id="video" controls playsinline>
+      <source src="reframrdemo.mp4" type="video/mp4">
+    </video>
+		<div class="title" id="title">
+			<h1>reframr demo</h1>
+			<h4>Uploaded May 1, 2020</h4>
+		</div>
+  <script>
+    dynamicdisplay();
+    function dynamicdisplay() {
+      video = document.getElementById("video");
+      if(window.innerHeight > window.innerWidth) {
+        video.style.objectFit = "cover";
+      }
+      else {
+        video.style.objectFit = "none";
+      }
+      setTimeout(dynamicdisplay, 1);
+    }
+  </script>
+	<script>
+		hidetitle();
+		function hidetitle() {
+			video = document.getElementById("video");
+			title = document.getElementById("title");
+			if (!video.paused) {
+				title.style.display = "none";
+			}
+			if (video.paused) {
+				title.style.display = "block";
+			}
+			setTimeout(hidetitle, 1);
+		}
+	</script>
+  </div>
+</div>

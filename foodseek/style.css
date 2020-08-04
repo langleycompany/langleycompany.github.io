@@ -1,0 +1,75 @@
+html {
+	width: 100%;
+	height: 100%;
+}
+
+#logobar {
+	height: 10%;
+}
+
+#logo-text {
+	color: #000000;
+	font-size: 2rem;
+	padding: 0.5rem;
+	line-height: 0.1;
+	font-family: 'DM Sans', sans-serif;
+}
+
+#logo {
+	text-align: right;
+	padding: 0.5rem;
+}
+
+#logo img {
+	max-width: 50%;
+	height: auto;
+}
+
+#middle-page-content {
+	font-size: 2.5rem;
+	font-family: 'DM Sans', sans-serif;
+	text-align: center;
+}
+
+.three {
+	width: 100%;
+	float: left;
+}
+
+#navbar {
+	position:fixed;
+	padding: 2rem;
+  bottom: 0;
+  width:100%;
+  height:1vw;
+	background: linear-gradient(45deg, #fc0000, #ffde59);
+	background-size: 1000% 1000%;
+
+	-webkit-animation: background-gradient 10s ease infinite;
+	-moz-animation: background-gradient 10s ease infinite;
+	animation: background-gradient 10s ease infinite;
+}
+
+@-webkit-keyframes background-gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@-moz-keyframes background-gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@keyframes background-gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+#navbar span {
+	text-align: center;
+	display: inline-block;
+  vertical-align: middle;
+}
